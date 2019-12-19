@@ -21,7 +21,7 @@ class Course < ApplicationRecord
     through: :enrollments,
     source: :user
 
-    has_one :prerequisite,
+    belongs_to :prerequisite,
     class_name: "Course",
     foreign_key: :prereq_id,
     primary_key: :id
@@ -30,5 +30,4 @@ class Course < ApplicationRecord
     class_name: "User",
     foreign_key: :instructor_id,
     primary_key: :id
-
 end
